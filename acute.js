@@ -7,3 +7,20 @@ function uncompleteTask(id) {
    window.location.href = "/task_uncomplete/" + id
    event.preventDefault();
   }
+
+
+
+function lPad(txt, maxLength) {
+  while (txt.length < maxLength) {
+    txt = '0' + txt;
+    }
+  return txt;
+  }
+
+function todayAsString() {
+  let dte = new Date();
+  let cur_day = lPad(String(dte.getDate()), 2);
+  let cur_month = lPad(String(dte.getMonth() + 1), 2);
+  let cur_year = dte.getFullYear();
+  return cur_year + "-" + cur_month + "-" + cur_day;
+  }
