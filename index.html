@@ -1,14 +1,30 @@
 <html><head><title>Test Acute.js</title>
-
 </head>
-
 <body>
-
 <script src="acute.js"></script>
 
+<H1>Testing acute.js</H1>
 
-<H3>Testing JS library</H3>
+<H3>String Functions</H3>
 
+"5" left padded to 5 digits =
+<script type="text/javascript"> document.write(lPad("5", 5));</script>
+<BR>
+"245" left padded to 2 digits =
+<script type="text/javascript"> document.write(lPad("245", 2));</script>
+<BR>
+
+The number 42 left padded to 4 digits =
+<script type="text/javascript"> document.write(lPad(42, 4));</script>
+!! CAREFUL<BR>
+
+Convert the number String(42) THEN left padded to 4 digits =
+<script type="text/javascript"> document.write(lPad(String(42), 4));</script>
+<BR>
+
+
+
+<H3>Date Functions</h3>
 Today's date is
 <script type="text/javascript"> document.write(todayAsString());</script>
 
