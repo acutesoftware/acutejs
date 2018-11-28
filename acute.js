@@ -24,3 +24,24 @@ function todayAsString() {
   let cur_year = dte.getFullYear();
   return cur_year + "-" + cur_month + "-" + cur_day;
   }
+
+function txtFromId(id) {
+  return document.getElementById(id).value;
+}
+
+function domAddText(txt) {
+  let el = document.createElement('div');
+  el.innerHTML = '<p>' + txt + '</p>';
+  document.body.appendChild(el);
+  event.preventDefault();
+}
+
+
+function domAddFromInput(id) {
+  let txt = txtFromId(id);
+  let el = document.createElement('div');
+  el.innerHTML = txt + '<BR>';
+  document.body.appendChild(el);
+  document.getElementById(id).value = '';
+  event.preventDefault();
+}

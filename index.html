@@ -28,6 +28,35 @@ Convert the number String(42) THEN left padded to 4 digits =
 Today's date is
 <script type="text/javascript"> document.write(todayAsString());</script>
 
+
+<H3>Document Object Model (DOM) Functions</H3>
+Adding content to the page through Javascript
+<pre>
+input id="txt" type=Text
+button onclick="domAddText(txtFromId('txt'))">Add text to page
+</pre>
+
+
+<form>
+  <input id="txt" type=Text></input>
+  <button onclick="domAddText(txtFromId('txt'))">Add text to page</button>
+</form>
+
+You can add text from another form and have it clear the input box
+<pre>
+input id="txt2" type=Text
+button onclick="domAddFromInput('txt2')"
+
+</pre>
+
+
+<form>
+  <input id="txt2" type=Text></input>
+  <button onclick="domAddFromInput('txt2')">Add text and clear input</button>
+</form>
+
+
+
 </body>
 
 </html>
