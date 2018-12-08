@@ -45,3 +45,9 @@ function domAddFromInput(id) {
   document.getElementById(id).value = '';
   event.preventDefault();
 }
+
+
+function runUnitTests() {
+  alert('running tests')
+
+}
