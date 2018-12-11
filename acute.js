@@ -1,3 +1,12 @@
+// acute.js
+// written by Duncan Murray, (C) Acute Software
+// MIT License
+
+
+
+// *****************************************************
+// Personal Information Manangement wrappers
+
 function completeTask(id) {
    window.location.href = "/task_done/" + id;
    event.preventDefault();
@@ -9,6 +18,9 @@ function uncompleteTask(id) {
   }
 
 
+// *****************************************************
+// String
+
 
 function lPad(txt, maxLength) {
   while (txt.length < maxLength) {
@@ -17,6 +29,10 @@ function lPad(txt, maxLength) {
   return txt;
   }
 
+// *****************************************************
+// Date
+
+
 function todayAsString() {
   let dte = new Date();
   let cur_day = lPad(String(dte.getDate()), 2);
@@ -24,6 +40,9 @@ function todayAsString() {
   let cur_year = dte.getFullYear();
   return cur_year + "-" + cur_month + "-" + cur_day;
   }
+
+// *****************************************************
+// Document Object Model
 
 function txtFromId(id) {
   return document.getElementById(id).value;
@@ -46,6 +65,12 @@ function domAddFromInput(id) {
   event.preventDefault();
 }
 
+// *****************************************************
+// Graphics
+
+
+// *****************************************************
+//Unit Test wrapper
 
 function runUnitTests() {
   //import { runTests } from './test_acute.js'
