@@ -59,6 +59,9 @@ button onclick="domAddFromInput('txt2')"
 <H3>Graphics Functions</H3>
 TOOD - interesting graphics stuff
 
+<canvas id="testCanvas" width="490" height="220"></canvas>
+
+
 
 
 <H1>Testing acute.js</H1>
@@ -67,6 +70,35 @@ Runs unit tests on the acutejs library.<BR>
   <form>
     <button onclick="runUnitTests()">Run Tests</button>
   </form>
+
+
+
+
+  <script>
+
+  window.onload = function() {
+      'use strict';
+      var ctx = getCanvas();
+      draw(ctx);
+  };
+
+  function getCanvas() {
+      var canvas = document.getElementById('testCanvas');
+      var ctx = canvas.getContext('2d');
+      var w = canvas.width = 200;
+      var h = canvas.height = 150;
+      return ctx;
+  }
+
+  function draw(ctx) {
+      ctx.fillStyle = 'rgb(100, 0, 0)';
+      ctx.fillRect(10, 10, 40, 40);
+      ctx.fillStyle = 'rgba(0, 0, 100, 0.5)';
+      ctx.fillRect(30, 30, 40, 40);
+  }
+
+  </script>
+
 
 
 </body>
