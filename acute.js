@@ -41,6 +41,27 @@ function todayAsString() {
   return cur_year + "-" + cur_month + "-" + cur_day;
   }
 
+function updateClock(){
+  var refresh=1000; // Refresh rate in milli seconds
+  mytime=setTimeout('showClock()',refresh)
+  event.preventDefault();
+}
+
+function showClock(elemId) {
+  var x = new Date()
+  document.getElementById(elemId).innerHTML = x;
+  event.preventDefault();
+  updateClock();
+}
+
+function getLocalTimeOffset() {
+  var offset = new Date().getTimezoneOffset();
+  console.log(offset);
+  return offset;
+
+}
+
+
 // *****************************************************
 // Document Object Model
 
@@ -64,6 +85,15 @@ function domAddFromInput(id) {
   document.getElementById(id).value = '';
   event.preventDefault();
 }
+
+// *****************************************************
+// Data (cookies, saving session info)
+
+function saveData(k,v) {
+  myCookie = k + '=' + v + '; expires=Thu, 31 Dec 2099 23:33:33 UTC;';
+  document.cookie = myCookie;
+}
+
 
 // *****************************************************
 // Graphics

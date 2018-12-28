@@ -1,8 +1,9 @@
 <html><head><title>Using Acute.js</title>
 </head>
 <body>
+<body onload="showClock('myClock')">
 <script src="acute.js"></script>
-<script src="test_acute.js"></script>
+<!--script src="test_acute.js"></script-->
 
 <H1>Using acute.js</H1>
 
@@ -28,6 +29,25 @@ Convert the number String(42) THEN left padded to 4 digits =
 <H3>Date Functions</h3>
 Today's date is
 <script type="text/javascript"> document.write(todayAsString());</script>
+<BR><BR>
+  GMT Time Offset (minutes) is
+  <script type="text/javascript"> document.write(getLocalTimeOffset());</script>
+  <BR>
+GMT Time Offset (hours) is
+  <script type="text/javascript"> document.write(getLocalTimeOffset()/60);</script>
+  <BR>
+  <script  type="text/javascript">
+    saveData('test_cookied', 'hello');
+  </script>
+
+<h4>Current Clock</h4>
+
+<span id='myClock' ></span>
+<form>
+  <button onclick="showClock('myClock')">Start Clock</button>
+</form>
+
+
 
 
 <H3>Document Object Model (DOM) Functions</H3>
