@@ -41,6 +41,19 @@ function todayAsString() {
   return cur_year + "-" + cur_month + "-" + cur_day;
   }
 
+function timestampToString(javascript_timestamp) {
+  // why the hell is this not in a standard JS library
+  var a = new Date(javascript_timestamp * 1);
+  var year = a.getFullYear();
+  var month = lPad((a.getMonth() + 1).toString(), 2)
+  var date = lPad(a.getDate().toString(), 2);
+  var hour = lPad(a.getHours().toString(), 2);
+  var min = lPad(a.getMinutes().toString(), 2);
+  var sec = lPad(a.getSeconds().toString(), 2);
+  var time = year + '-' + month + '-' + date + ' ' + hour + ':' + min + ':' + sec ;
+  return time;
+}
+
 function updateClock(){
   var refresh=1000; // Refresh rate in milli seconds
   mytime=setTimeout('showClock()',refresh)
@@ -58,7 +71,6 @@ function getLocalTimeOffset() {
   var offset = new Date().getTimezoneOffset();
   console.log(offset);
   return offset;
-
 }
 
 
