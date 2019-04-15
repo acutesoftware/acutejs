@@ -6,6 +6,33 @@
 <!--script src="test_acute.js"></script-->
 
 <H1>Using acute.js</H1>
+This is a test page for playing with Javascript<BR>
+<div id='score' class='center'>0</div>
+ <canvas id='game-canvas' width=600 height=400></canvas>
+
+
+
+
+ <script>
+         window.ECS = {
+             Components: {},
+             systems: {},
+             entities: [],
+             game: {},
+             score: 0
+         };
+         ECS.$canvas = document.getElementById("game-canvas");
+         ECS.context = ECS.$canvas.getContext("2d");
+         ECS.$score = document.getElementById("score");
+</script>
+<script src='Entity.js'></script>
+<script src='Components.js'></script>
+<script src='Assemblages.js'></script>
+<script src='systems/userInput.js'></script>
+<script src='systems/render.js'></script>
+<script src='game.js'></script>
+
+
 
 <H3>String Functions</H3>
 
