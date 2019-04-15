@@ -109,13 +109,3 @@ function saveData(k,v) {
 
 // *****************************************************
 // Graphics
-
-
-// *****************************************************
-//Unit Test wrapper
-
-function runUnitTests() {
-  //import { runTests } from './test_acute.js'
-  alert('running tests')
-
-}
