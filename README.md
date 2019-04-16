@@ -2,15 +2,15 @@
 library of vanilla javascript functions
 
 
-##Game Utils and misc tests
+## Game Utils and misc tests
 This is really only for playing with different techniques
 
 
-###Example 1 - ECS in Javascript
+### Example 1 - ECS in Javascript
 See tutorial - http://vasir.net/blog/game-development/how-to-build-entity-component-system-in-javascript
 
 
-###TileSet maps
+### TileSet maps
 
   See tutorial - http://blog.sklambert.com/create-a-canvas-tileset-background/
 
@@ -18,7 +18,7 @@ See tutorial - http://vasir.net/blog/game-development/how-to-build-entity-compon
 
 
 
-##Misc JS Examples
+## Misc JS Examples
 
 ### Date Time utils
 Initial utilities for handling dates on forms
