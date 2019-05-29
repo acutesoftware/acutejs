@@ -192,3 +192,24 @@ function makeMap() {
    }
 
 }
+
+
+var waitForLoad = timeoutms => new Promise((r, j)=>{
+    var check = () => {
+
+      console.warn('checking')
+      if(document.getElementById('STATUS').innerHTML === 'Ready') 
+        r()
+      else if((timeoutms -= 100) < 0)
+        j('timed out!')
+      else
+        setTimeout(check, 100)
+    }
+    setTimeout(check, 100)
+  })
+
+  //setTimeout(()=>{document.getElementById('STATUS').innerHTML='Ready'}, 1000)
+  (async ()=>{
+    document.getElementById('STATUS').innerHTML !== 'Ready'
+    waitForLoad(2000)
+  })()
