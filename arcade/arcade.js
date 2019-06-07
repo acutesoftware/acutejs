@@ -233,35 +233,43 @@ function move_request(direction) {
     if (direction == 'up') {
         if (player.direction == 'up') {
             player.direction = 'still'
+            player.speed = 0
         } else {
         player.direction = 'up'
-        }
+        player.speed = player.speed +10
+    }
 
     }
     else if (direction == 'down') {
         // down arrow - was 40
         if (player.direction == 'down') {
             player.direction = 'still'
+            player.speed = 0
         } else {
         player.direction = 'down'
-        }
+        player.speed = player.speed +10
+    }
     }
     else if (direction == 'left') {
         // left arrow - was 37
         if (player.direction == 'left') {
             player.direction = 'still'
+            player.speed = 0
         } 
         else {
             player.direction = 'left'
+            player.speed = player.speed +10
         }
     }
     else if (direction == 'right') {
        // right arrow -- was 39
        if (player.direction == 'right') {
         player.direction = 'still'
+        player.speed = 0
         } 
         else {
             player.direction = 'right'
+            player.speed = player.speed +10
         }
 
     }
@@ -275,16 +283,16 @@ function move_request(direction) {
 
 function movePlayer() {
     if (player.direction === 'up') {
-        player.y = player.y - 20
+        player.y = player.y - player.speed
     }
     else if (player.direction === 'down') {
-        player.y = player.y + 20
+        player.y = player.y + player.speed
     }
     else if (player.direction === 'left') {
-       player.x = player.x - 20
+       player.x = player.x - player.speed
      }
     else if (player.direction === 'right') {
-       player.x = player.x + 20
+       player.x = player.x + player.speed
     }
  
     check_player_position()
@@ -295,15 +303,15 @@ function movePlayer() {
 
 function check_player_position() {
     if (player.x < 0) {
-        player.x = canvas.width -50
+        player.x = canvas.width -5
     }
     if (player.y < 0) {
-        player.y = canvas.height-50
+        player.y = canvas.height-5
     }
-    if (player.x > canvas.width-50) {
+    if (player.x > canvas.width-5) {
         player.x = 0
     }
-    if (player.y > canvas.height-50) {
+    if (player.y > canvas.height-5) {
         player.y = 0
     }
 
