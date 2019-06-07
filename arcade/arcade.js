@@ -149,6 +149,12 @@ document.addEventListener('mousemove', function(e) {
 
 document.addEventListener('click', function(e) {
     //console.log(document.elementFromPoint(e.pageX, e.pageY));
+
+    if (gameData.state == 'START') {
+        start_game()
+    }
+    else {
+
     [y,x] = getCursorPosition(e)
     //console.log("tile_x: " + x + " tile_y: " + y);
 
@@ -158,7 +164,7 @@ document.addEventListener('click', function(e) {
     xclicked = Math.floor(x/1)
     gameData.score += 1
     getCanvasObjectClicked(x,y)
-
+    }
 
 })
 
