@@ -22,7 +22,7 @@ var ctx;
 
 
 //players.push({'x':10,'y':20, 'direction':'still'})
-player = {'x':10,'y':20, 'direction':'still', speed:0}
+player = {'x':10,'y':20, 'direction':'still', speed:0, 'state':'happy'}
 
 
 
@@ -355,7 +355,7 @@ function getCanvasObjectClicked(x,y) {
 
 
 function drawPlayer() {
-    smileyFace(player.x, player.y, player.direction, 50)
+    smileyFace(player.x, player.y, player.direction, 20, player.state)
 }
 
 
