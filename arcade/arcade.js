@@ -355,7 +355,7 @@ function getCanvasObjectClicked(x,y) {
 
 
 function drawPlayer() {
-    smileyFace(player.x, player.y, player.direction, 20, player.state)
+    smileyFace(player.x, player.y, player.direction, 40, player.state)
 }
 
 
