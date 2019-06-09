@@ -71,7 +71,6 @@ function start_game() {
     loot.push({"Name":"jewel","x":700, "y":150})
     //console.log(enemies)
     gameData.state = 'RUN'
-    document.getElementById('btn_start').visible = false
     redraw_all()
 
 }
@@ -356,81 +355,7 @@ function getCanvasObjectClicked(x,y) {
 
 
 function drawPlayer() {
-    // this draws onto the canvas using javascript
-    //console.log('drawing sprite')
-    var eye_x_left 
-    var eye_x_right
-    var eye_y
-    //ctx.beginPath();
-    ctx.strokeStyle = "black"
-    
-    ctx.beginPath()
-    ctx.fillStyle = 'gray'
-    ctx.arc(player.x+75, player.y+75, 50, 0, Math.PI * 2, true); // Outer circle
-    ctx.fill();
-    ctx.closePath();
-    ctx.stroke();
-    //ctx.moveTo(110, 75);
-    ctx.beginPath()
-    ctx.arc(player.x+75, player.y+95, 25, 0, Math.PI, false);  // Mouth (clockwise)
-    ctx.closePath();
-    ctx.stroke();
-    //ctx.moveTo(65, 65);
-    ctx.beginPath()
-    ctx.fillStyle = 'white'
-    ctx.arc(player.x+50, player.y+65, 20, 0, Math.PI * 2, true);  // Left eye
-    ctx.fill();
-    ctx.closePath();
-    ctx.stroke();
-    //ctx.moveTo(95, 65);
-    ctx.beginPath()
-    ctx.arc(player.x+100, player.y+65, 20, 0, Math.PI * 2, true);  // Right eye
-    ctx.fill();
-    
-    ctx.closePath();
-    ctx.stroke();
-
-    // calculate inner eyeballs based on direction
-    if (player.direction == 'still') {
-        eye_x_left = player.x+50
-        eye_x_right = player.x+100
-        eye_y = player.y+65
-    } else if (player.direction == 'left') {
-        eye_x_left = player.x+40
-        eye_x_right = player.x+90
-        eye_y = player.y+65
-    }
- else if (player.direction == 'right') {
-    eye_x_left = player.x+60
-    eye_x_right = player.x+110
-    eye_y = player.y+65
-}
- else if (player.direction == 'up') {
-    eye_x_left = player.x+50
-    eye_x_right = player.x+100
-    eye_y = player.y+55
-}
- else if (player.direction == 'down') {
-    eye_x_left = player.x+50
-    eye_x_right = player.x+100
-    eye_y = player.y+75
-}
-
-   // draw inner eyeballs based on direction
-   ctx.fillStyle = 'black'
-   ctx.beginPath()
-   ctx.arc(eye_x_left, eye_y, 10, 0, Math.PI * 2, true);  // Left eye
-   ctx.fill();
-   ctx.closePath();
-   ctx.stroke();
-   //ctx.moveTo(95, 65);
-   ctx.beginPath()
-   ctx.arc(eye_x_right, eye_y, 10, 0, Math.PI * 2, true);  // Right eye
-   ctx.fill();
-   ctx.closePath();
-   ctx.stroke();
-
-
+    smileyFace(player.x, player.y, player.direction, 50)
 }
 
 
@@ -473,7 +398,6 @@ function drawEnemy(enemy) {
  
 
 }
-
 
 
 function drawLoot(loot) {
