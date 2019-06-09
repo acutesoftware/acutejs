@@ -7,16 +7,20 @@
 
 function smileyFace(x, y, direction, radius, state) {
 
+
+
     // this draws onto the canvas using javascript
     //console.log('drawing sprite') DEF radius = 50
-    var face_centre_x = x + radius + (radius / 2) //- 15 // x+75
-    var face_centre_y = y + radius + (radius / 2) //- 15 // y+75
+    //var face_centre_x = x + radius + (radius / 2) //- 15 // x+75
+    //var face_centre_y = y + radius + (radius / 2) //- 15 // y+75
+    var face_centre_x = x 
+    var face_centre_y = y
     var face_radius = radius  // y+75
  
-    var eye_centre_x_left = x+ radius //- (radius / 2)  + (radius / 2) // should be x=50,y65,r=20
-    var eye_centre_x_right = x+radius + (radius ) //- (radius/2 )
+    var eye_centre_x_left = x - radius/2 //- (radius / 2)  + (radius / 2) // should be x=50,y65,r=20
+    var eye_centre_x_right = x+ (radius /2) //- (radius/2 )
     var eye_radius = radius - (radius / 2) //- 5
-    var eye_centre_y = y+  radius + eye_radius
+    var eye_centre_y = y //+  radius + eye_radius
 
     var eye_x_left   // for inner pupil, using direction
     var eye_x_right  // for inner pupil, using direction
@@ -88,6 +92,7 @@ function smileyFace(x, y, direction, radius, state) {
 
 
     // draw the mouth based on state 
+    //console.log('about to draw mouth, state = ', state)
     if (state == 'happy') {
         ctx.beginPath()
         ctx.arc(face_centre_x, face_centre_y+radius/2, radius/4, 0, Math.PI, false);  // Mouth (clockwise)
@@ -101,8 +106,7 @@ function smileyFace(x, y, direction, radius, state) {
         ctx.stroke();
         ctx.closePath();
 
-    }
-
+    } 
  else if (state == 'sad') {
     ctx.beginPath()
     ctx.arc(face_centre_x, face_centre_y+radius/2, radius/4, 0, Math.PI*2, false);  // Mouth (clockwise)
@@ -110,7 +114,20 @@ function smileyFace(x, y, direction, radius, state) {
     ctx.stroke();
     ctx.closePath();
 
+} else { // normal - straight line
+    ctx.beginPath();
+    ctx.moveTo(face_centre_x-radius/2, face_centre_y+radius/1.5);
+    ctx.lineTo(face_centre_x+radius/2, face_centre_y+radius/1.5);
+    ctx.stroke();       
 }
+
+// draw a dot where the x/y of player actually is
+ctx.beginPath();
+ctx.moveTo(x, y);
+ctx.lineTo(x+2,y+2);
+ctx.stroke();       
+
+
 
 
 }
