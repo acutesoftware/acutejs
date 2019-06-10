@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Basic introduction to programming</title>
+
+    <link rel=stylesheet type=text/css href="arcade.css">
+
+</head>
+<body>
+
+<h1>Easy Programming</h1>
+This page gives you a basic introduction to programming
+
+Using this simple collection of functions you can make an interactive webpage and even a simple game.
+<BR>
+<BR>
+
+There are explanations on what each thing does 
+
+<h2>Exercise 1 - create a simple web page</h2>
+<H3>Copy the templates</H3>
+copy the files "index.html", "basic.css" and 
+"basic.js" to a new folder in your documents folder
+
+<H3>Make a Javascript program say Hello World</H3>
+
+Create a new text file in your documents folder called "myprogram.js" and paste in the text below
+<pre>
+        print("Hello World")
+     
+</pre>
+
+Save the file and double click the "index.html"
+<BR>
+You should see a green screen with some text saying
+<PRE>
+        Welcome to your program! 
+        Hello World 
+</PRE>    
+
+
+<h2>Exercise 2 - Introducing the canvas</h2>
+
+In your myprogram.js add the following lines at the end of the program 
+
+<PRE>
+        border("green", "blue")
+
+        happyFace(100,100, 75)
+        normalFace(300,100, 50)
+        sadFace(500,100, 30)
+        
+</PRE>
+
+The first line colors the canvas green and puts a blue border around it<BR>
+
+    The next lines draw faces on the canvas - the numbers there are parameters and they mean the following
+<PRE>
+    happyFace(X,Y, SIZE)
+</PRE>
+Where X = how many pixels on the screen from the left <BR>
+Y = how many pixels on the screen from the top<BR>
+SIZE = how big the face is<BR>
+
+<BR>
+    You should see a screen like below <BR>
+        <img src="basic_javascript_ex2.png"/>
+
+
+
+<h2>Exercise 3 - Adding your own functions</h2>
+On the top left of the above screenshot, you will also see 3 buttons<BR>
+ <PRE>
+    Start refreshes myprogram.js
+    Button1 runs myFunction1()
+    Button2 runs myFunction2()    
+</PRE>  
+
+A function is a little bit of code that runs when something happens (like press a button or click the mouse)
+<BR><BR>
+When the buttons are clicked they will "run" the functions named myFunction1 and myFunction2 depending on which button you press.
+
+We need to create the functions for buttons 1 and 2.<BR>
+
+    In your myprogram.js you need to add the following code at the end of the file<BR>
+
+
+        <pre>
+    function myFunction1() {
+        print('you pressed button 1')
+        // you can add more code here that runs when button 1 is pressed
+    
+        event.preventDefault()
+    }
+    
+    function myFunction2() {
+        print('you pressed button 2')
+        // you can add more code here that runs when button 2 is pressed
+    
+        event.preventDefault()
+    }
+
+
+</pre>
+
+        Now refresh the index.html page (in your browser, press [CTRL] [F5]) and you will see in the logs
+        <PRE>
+                Welcome to your program! 
+                Hello World
+                you pressed button 1
+                you pressed button 2            
+        </PRE>
+
+</body>
+</html>

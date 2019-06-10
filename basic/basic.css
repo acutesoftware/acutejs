@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+    background-color: seagreen;
+}
+
+.col1 {
+    float: left;
+    width: 25%;
+  }
+  
+  .col2 {
+    float: left;
+    width: 50%;
+  }
+  .col3 {
+    float: left;
+    width: 33.33%;
+  }
+  .col4 {
+    float: left;
+    width: 75%;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  #canvas {
+      width: 100%;
+
+  }
+  
+  #log {
+    overflow-y: scroll; 
+    height:150px;
+    background-color: black;
+    color: chartreuse;
+    
+  }
