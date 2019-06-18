@@ -20,7 +20,7 @@ Modify the key in the server.py to a unique number
 
 Start the server with ./go.sh
 
-(will start serving on port 4561)
+(will start serving on port 5200)
 
 Launch index.html
 
