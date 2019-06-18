@@ -40,12 +40,17 @@ def posts():
     {"id":"2","createdAt":"2018-10-04T05:27:22.341Z","name":"Alexie Lindgren","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/petrangr/128.jpg","title":"Refined Wooden Shirt programming Rustic","content":"Credit Card Account"},
     ]
     print('sending 2 posts')
-    #return res # json.dumps(res) # 
     return json.dumps(res) # 
 
-@app.route('/p/<id>', methods=['GET', 'POST'])
+@app.route('/post/<id>', methods=['GET', 'POST'])
 def show_post(id):
-    return render_template('home.html')
+    res = {
+        "id":id,
+        "title":"This is post number " + id,
+        "content":"This is the content.",
+        "name":"written by No one"
+    }
+    return json.dumps(res)
 
 @app.route('/register', methods=['GET', 'POST'])
 def register(id):
