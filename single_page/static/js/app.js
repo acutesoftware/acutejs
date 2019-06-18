@@ -1,7 +1,5 @@
 "use strict";
 
-alert('javascript app.js loading')
-
 import Home         from './views/pages/Home.js'
 import About        from './views/pages/About.js'
 import Error404     from './views/pages/Error404.js'

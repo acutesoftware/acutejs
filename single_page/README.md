@@ -22,5 +22,5 @@ Start the server with ./go.sh
 
 (will start serving on port 5200)
 
-Launch index.html
+Browser should navigate to http://127.0.0.1:5200
 
