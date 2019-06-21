@@ -28,10 +28,6 @@ def page_not_found(e):
 def home():
     return render_template('home.html')
 
-@app.route('/about', methods=['GET'])
-def about():
-    return render_template('home.html')
-
 @app.route('/posts', methods=['GET'])
 def posts():
 
@@ -39,8 +35,8 @@ def posts():
     {"id":"1","createdAt":"2018-10-04T12:51:56.032Z","name":"Matilda Kessler","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/superoutman/128.jpg","title":"Concrete firewall Vision-oriented","content":"navigate"},
     {"id":"2","createdAt":"2018-10-04T05:27:22.341Z","name":"Alexie Lindgren","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/petrangr/128.jpg","title":"Refined Wooden Shirt programming Rustic","content":"Credit Card Account"},
     ]
-    print('sending 2 posts')
-    return json.dumps(res) # 
+    
+    return json.dumps(res) 
 
 @app.route('/post/<id>', methods=['GET', 'POST'])
 def show_post(id):
@@ -51,10 +47,6 @@ def show_post(id):
         "name":"written by No one"
     }
     return json.dumps(res)
-
-@app.route('/register', methods=['GET', 'POST'])
-def register(id):
-    return render_template('home.html')
 
 
 if __name__ == '__main__':
