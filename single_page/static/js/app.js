@@ -34,7 +34,6 @@ const router = async () => {
     header.innerHTML = await Navbar.render();
     await Navbar.after_render();
     footer.innerHTML = await Bottombar.render();
-    await Utils.sleep(1000)
     await Bottombar.after_render();
 
 

@@ -12,8 +12,6 @@ let getPostsList = async () => {
     try {
         const response = await fetch(`/posts`, options)
         const json = await response.json();
-        await Utils.sleep(1000)
-    
         return json
     } catch (err) {
         console.log('Error getting documents', err)
