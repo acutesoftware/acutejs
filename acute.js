@@ -191,8 +191,11 @@ function makeMap() {
       }
    }
 
-}
 
+
+/****************************************************
+ * Comms
+ */
 
 var waitForLoad = timeoutms => new Promise((r, j)=>{
     var check = () => {
@@ -213,3 +216,17 @@ var waitForLoad = timeoutms => new Promise((r, j)=>{
     document.getElementById('STATUS').innerHTML !== 'Ready'
     waitForLoad(2000)
   })()
+
+  async function fetchJson(url) {
+    try {
+      const dataRaw = await fetch(url)
+      //console.log('dataRaw = ', dataRaw)
+      const dataJson = await dataRaw.json()
+      //console.log('data = ', dataJson)
+      return dataJson
+      }
+    catch(err) {
+      console.log('ERROR fetching data for ' + url + err)
+     }
+     
+    }
